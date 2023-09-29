@@ -184,6 +184,10 @@ function(conan_install)
     endif()
 endfunction()
 
+# ---- Add Python venv ----
+include(cmake/PythonVenv.cmake)
+enable_python_venv()
+message("Python: ${Python3_EXECUTABLE}")
 
 macro(conan_provide_dependency package_name)
     get_property(CONAN_INSTALL_SUCCESS GLOBAL PROPERTY CONAN_INSTALL_SUCCESS)
